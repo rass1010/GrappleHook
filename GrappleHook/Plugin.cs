@@ -1,4 +1,4 @@
-﻿using BepInEx;
+using BepInEx;
 using BepInEx.Configuration;
 using System;
 using System.Collections.Generic;
@@ -161,6 +161,7 @@ namespace GrappleMonke
         {
             // The room was left. Disable mod stuff.
             inAllowedRoom = false;
+            GameObject.Find("ForestTutorialExit").layer = 0;
             StopPull();
             start = true;
         }
@@ -173,6 +174,7 @@ namespace GrappleMonke
         void OnDisable()
         {
             hauntedModMenuEnabled = false;
+            GameObject.Find("ForestTutorialExit").layer = 0;
             StopPull();
             start = true;
         }
